@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using WebApp.Data;
 using WebApp.Models;
 
@@ -151,15 +152,15 @@ namespace WebApp.Controllers
             return _context.Demande.Any(e => e.Id == id);
         }
 
-        public PartialViewResult List(object model)
+        /*public PartialViewResult List(object model)
         {
 
-            /*var ListeDemandes = from Demande in ApplicationDbContext.
+            var ListeDemandes = from Demande in ApplicationDbContext.
                                     select Events;
 
             recommendedevents = recommendedevents.Where(s => s.Recommended.Equals(true));
-            */
+            
             return PartialView(model: List);
-        }
+        }*/
     }
 }
