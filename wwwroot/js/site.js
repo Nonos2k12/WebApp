@@ -39,27 +39,29 @@ let saveFile = () => {
     const email = document.getElementById("txtEmail");
     const societe = document.getElementById("txtSociete");
     const date = document.getElementById("txtDate");
+    const demande = document.getElementById("txtDemande");
+    const telephone = document.getElementById("txtTelephone");
+    const userId = document.getElementById("txtUserId");
 
     // This variable stores all the data.
-    let data = "\r Nom: " + nom.value + " \r\n " + "Prenom: " + prenom.value + " \r\n " + "Email: " + email.value + " \r\n " + "Société: " + societe.value + " \r\n " + "Date: " + date.value;
+    let data = "Nom: " + nom.value + " \r\n " + "Prenom: " + prenom.value + " \r\n " + "Email: " + email.value + " \r\n " + "Telephone: " + telephone.value + " \r\n " + "Société: " + societe.value + " \r\n " + "Type de demande: " + demande.value + " \r\n " + "Date: " + date.value + " \r\n " + "UserId: " + userId.value;
     // Convert the text to BLOB.
     const textToBLOB = new Blob([data], { type: "text/plain" });
-    console.log(societe.value);
-    var filename = societe.value + " " + new Date().toLocaleString();
-    var month = new Date(); //months from 1-12
+    //var filename = new Date();
+    /*var month = new Date(); //months from 1-12
     month = month.getMonth();
 
     var day = new Date();
     var day = day.getUTCDate();
 
     var year = new Date();
-    var year = year.getUTCFullYear();
+    var year = year.getUTCFullYear();*/
 
-    newdate = year + "/" + month + "/" + day;
-    const sFileName = filename; // The file to save the data.
+    //newdate = year + "/" + month + "/" + day;
+    //const sFileName = filename; // The file to save the data.
 
     let newLink = document.createElement("a");
-    newLink.download = new Date();
+    newLink.download = societe.value + " " + date.value;
 
     if (window.webkitURL != null) {
         newLink.href = window.webkitURL.createObjectURL(textToBLOB);
