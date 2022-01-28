@@ -4,9 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>Demande</h4>
+<h4>Nouvelle demande</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,17 +12,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nom" class="control-label"></label>
-                <input asp-for="Nom" class="form-control" />
+                <input asp-for="Nom" class="form-control" id="txtNom" />
                 <span asp-validation-for="Nom" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Prenom" class="control-label"></label>
-                <input asp-for="Prenom" class="form-control" />
+                <input asp-for="Prenom" class="form-control" id="txtPrenom" />
                 <span asp-validation-for="Prenom" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="NomSociete" class="control-label"></label>
-                <input asp-for="NomSociete" class="form-control" />
+                <input asp-for="NomSociete" class="form-control" id="txtSociete" />
                 <span asp-validation-for="NomSociete" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -34,7 +32,7 @@
             </div>
             <div class="form-group" id="email">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" class="form-control" id="txtEmail" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group" id="telephone">
@@ -44,7 +42,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
+                <input asp-for="Date" class="form-control" id="txtDate" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -53,7 +51,7 @@
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" onclick="saveFile()" />
             </div>
         </form>
     </div>
