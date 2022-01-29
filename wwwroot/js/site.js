@@ -32,6 +32,23 @@ function showInputEmail() {
     $('#email').css('visibility', 'visible');
 }*/
 
+$(document).ready(function () {
+    $('#txtDemande').on('change', function () {
+        if (this.value == 'Téléphone') {
+            $("#telephone").show();
+            $("#email").hide();
+        }
+        else if (this.value == 'Email') {
+            $("#email").show();
+            $("#telephone").hide();
+        }
+        else if (this.value == 'Site') {
+            $("#email").hide();
+            $("#telephone").hide();
+        }
+    });
+});
+
 let saveFile = () => {
     // Get the data from each element on the form.
     const nom = document.getElementById("txtNom");
