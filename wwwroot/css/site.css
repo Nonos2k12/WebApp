@@ -15,6 +15,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: antiquewhite;
 }
 
 #heure {
@@ -24,4 +25,8 @@ body {
 
 #btn-home {
     margin-top: 6em;
+}
+
+#formButton {
+    margin-top: 10px;
 }
