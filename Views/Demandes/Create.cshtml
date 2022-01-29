@@ -21,31 +21,27 @@
                 <span asp-validation-for="Prenom" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NomSociete" class="control-label">Nom de la société</label>
+                <label asp-for="NomSociete" class="control-label"></label>
                 <input asp-for="NomSociete" class="form-control" id="txtSociete" />
                 <span asp-validation-for="NomSociete" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TypeDemande" class="control-label">Type de demande</label>
-                <select id="txtDemande" asp-for="TypeDemande">
-                    <option value="Site">Site Internet</option>
-                    <option value="Téléphone">Téléphone</option>
-                    <option value="Email">Email</option>
-                </select>
+                <input asp-for="TypeDemande" class="form-control" id="txtDemande" />
                 <span asp-validation-for="TypeDemande" class="text-danger"></span>
             </div>
             <div class="form-group" id="email">
-                <label asp-for="Email" class="control-label">Email</label>
+                <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" id="txtEmail" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group" id="telephone">
-                <label asp-for="Telephone" class="control-label">Numéro de téléphone</label>
+                <label asp-for="Telephone" class="control-label"></label>
                 <input asp-for="Telephone" class="form-control" id="txtTelephone" />
                 <span asp-validation-for="Telephone" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Date" class="control-label">Date de la demande</label>
+                <label asp-for="Date" class="control-label"></label>
                 <input asp-for="Date" class="form-control" id="txtDate" />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
@@ -60,7 +56,7 @@
         </form>
     </div>
     <div class="col-md-4">
-        
+        <partial name="_test" />
     </div>
 </div>
 
