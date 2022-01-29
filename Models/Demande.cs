@@ -11,11 +11,12 @@ namespace WebApp.Models
         public string Prenom { get; set; }
         [Required]
         public string NomSociete { get; set; }
+        [Required]
         public string TypeDemande { get; set; }
-        public string Email { get; set; }
-        public string Telephone { get; set; }
+        public string? Email { get; set; }
+        public string? Telephone { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         public Demande()
         {
