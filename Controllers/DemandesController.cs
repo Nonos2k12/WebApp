@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -22,12 +23,14 @@ namespace WebApp.Controllers
         }
 
         // GET: Demandes
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Demande.ToListAsync());
         }
 
         // GET: Demandes/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,6 +49,7 @@ namespace WebApp.Controllers
         }
 
         // GET: Demandes/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -56,6 +60,7 @@ namespace WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("Id,Nom,Prenom,NomSociete,TypeDemande,Email,Telephone,Date,IdUser")] Demande demande)
         {
             if (ModelState.IsValid)
@@ -68,6 +73,7 @@ namespace WebApp.Controllers
         }
 
         // GET: Demandes/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -88,6 +94,7 @@ namespace WebApp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nom,Prenom,NomSociete,TypeDemande,Email,Telephone,Date,UserId")] Demande demande)
         {
             if (id != demande.Id)
@@ -119,6 +126,7 @@ namespace WebApp.Controllers
         }
 
         // GET: Demandes/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -139,6 +147,7 @@ namespace WebApp.Controllers
         // POST: Demandes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var demande = await _context.Demande.FindAsync(id);
@@ -151,6 +160,21 @@ namespace WebApp.Controllers
         {
             return _context.Demande.Any(e => e.Id == id);
         }
+
+        /*public IActionResult List()
+        {
+            return PartialView();
+        }*/
+
+        public ActionResult List()
+        {
+            return PartialView("_List");
+        }
+
+        /*public async Task<IActionResult> List(Demande demande)
+        {
+            return PartialView(await _context.Demande.ToListAsync());
+        }*/
 
         /*public PartialViewResult List(object model)
         {

@@ -23,10 +23,18 @@ body {
     float: right;
 }
 
-#btn-home {
+#btn-home, #btn-logout {
     margin-top: 6em;
 }
 
 #formButton {
     margin-top: 10px;
+}
+
+.navbar {
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1);
+}
+
+.footer {
+    background: linear-gradient(0.25turn, #ebf8e1, #3f87a6);
 }
