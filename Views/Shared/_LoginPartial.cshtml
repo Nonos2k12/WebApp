@@ -10,7 +10,7 @@
     </li>
     <li class="nav-item" id="deconnect">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Se déconnecter</button>
+            <button  type="submit" class="nav-link btn btn-link text-dark" id="btn-deconnect">Se déconnecter</button>
         </form>
     </li>
 }

@@ -14,17 +14,21 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-  background-color: antiquewhite;
+    margin-bottom: 60px;
+    background-color: #ebf8e1;
 }
 
-#heure {
-    display: inline;
-    float: right;
+button:not(#btn-deconnect) {
+    text-shadow: 1px 0px black;
 }
 
 #btn-home, #btn-logout {
     margin-top: 6em;
+    font-weight: bold;
+}
+
+#btn-demande {
+    background-color: #3f87a6;
 }
 
 #deconnect, #connect {
@@ -33,6 +37,11 @@ body {
 
 #formButton {
     margin-top: 10px;
+}
+
+#heure {
+    display: inline;
+    float: right;
 }
 
 .navbar {
