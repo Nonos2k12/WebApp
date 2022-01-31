@@ -18,6 +18,8 @@ namespace WebApp.Models
         public DateTime Date { get; set; } = DateTime.Now;
         public int? UserId { get; set; }
 
+        //public IEnumerable<Demande> Demandes { get; set; }
+
         public Demande()
         {
 

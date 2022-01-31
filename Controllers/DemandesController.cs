@@ -161,30 +161,38 @@ namespace WebApp.Controllers
             return _context.Demande.Any(e => e.Id == id);
         }
 
-        /*public IActionResult List()
-        {
-            return PartialView();
-        }*/
-
-        public ActionResult List()
-        {
-            return PartialView("_List");
-        }
-
-        /*public async Task<IActionResult> List(Demande demande)
+        /*public async Task<IActionResult> List()
         {
             return PartialView(await _context.Demande.ToListAsync());
         }*/
 
-        /*public PartialViewResult List(object model)
+        public async Task<IActionResult> Demandes()
         {
+            var model = new Demande();
 
-            var ListeDemandes = from Demande in ApplicationDbContext.
-                                    select Events;
+            return PartialView(await _context.Demande.ToListAsync());
+        }/*
 
-            recommendedevents = recommendedevents.Where(s => s.Recommended.Equals(true));
-            
-            return PartialView(model: List);
+        [HttpPost]
+        public RedirectToActionResult NewDemande(Demande model)
+        {
+            if (ModelState.IsValid)
+            {
+                Demande demande = new Demande();
+                demande.Nom = Model.Nom;
+                demande.Prenom = Model.Prenom;
+                demande.Date = Model.Date;
+                _context.Demande.Add(demande);
+                _context.SaveChanges();
+                _context.Dispose();
+            }
+
+            return RedirectToAction("Demandes");
+        }*/
+
+        /*public async Task<IActionResult> List(Demande demande)
+        {
+            return PartialView(await _context.Demande.ToListAsync());
         }*/
     }
 }
