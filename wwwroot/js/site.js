@@ -16,8 +16,9 @@ $(document).ready(function () {
     });
 });
 
+// Fonction pour sauvegarder les données du formulaire dans un fichier .txt
 let saveFile = () => {
-    // Get the data from each element on the form.
+    // On récupère les données de chaque element du formulaire.
     const nom = document.getElementById("txtNom");
     const prenom = document.getElementById("txtPrenom");
     const email = document.getElementById("txtEmail");
@@ -27,9 +28,9 @@ let saveFile = () => {
     const telephone = document.getElementById("txtTelephone");
     const userId = document.getElementById("txtUserId");
 
-    // This variable stores all the data.
+    // Cette variable stocke toutes les données.
     let data = "Nom: " + nom.value + " \r\n " + "Prenom: " + prenom.value + " \r\n " + "Email: " + email.value + " \r\n " + "Telephone: " + telephone.value + " \r\n " + "Société: " + societe.value + " \r\n " + "Type de demande: " + demande.value + " \r\n " + "Date: " + date.value + " \r\n " + "UserId: " + userId.value;
-    // Convert the text to BLOB.
+    // On convertit le texte en BLOB.
     const textToBLOB = new Blob([data], { type: "text/plain" });
 
     let newLink = document.createElement("a");
